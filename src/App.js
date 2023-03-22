@@ -1,29 +1,25 @@
 import testLogo from './logo.svg';
+import weatherData from './data/data'
 import './App.css';
 
-const data = [
-  {
-    "day":"WED",
-    "date":8,
-    "weatherType":"cloudy",
-    "temp":71
-  }
-]
 
 /**
  * TODO LIST
  * Set up general structure of one section
  * Add images and text
+ * Create a data object to generate the UI sections
  * Format styling for desktop (matches the design)
  * Add in other sections
+ * Add functionality to display icons based on data types
  */
 
 function App() {
+  console.log(weatherData)
   return (
     <div className="App">
       <main>
         <section>
-          <p>WED</p>
+          <p>{weatherData[0].day}</p>
           <p>8</p>
           <div>
             <img src={testLogo} className="weatherLogo--style" alt="test" />
