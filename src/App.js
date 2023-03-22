@@ -36,12 +36,43 @@ function App() {
                       <img src={CloudyIcon} className="weatherLogo--style clouds" alt="test" />
                     </div>
                     <p className='temp--style cloudy-details-color'>{weather.temp}&#176;</p>
+                    <>
+                      <div className="details--container">
+                        <>
+                          <img src={CloudyUmbrella} className="minorLogo--style" alt="test" />
+                          <p className='thermometer cloudy-details-color'>84%</p>            
+                        </>
+                      </div>
+                      <div className="details--container">
+                          <>
+                            <img src={CloudyThermometer} className="minorLogo--style" alt="test" />
+                            <p className='thermometer cloudy-details-color'>28&#176;</p>                      
+                          </>
+                      </div>
+                    </>
                   </>
                 }
                 {weather.weatherType === "sunny" &&
-                  <div className='image-container'>
-                    <img src={SunnyIcon} className="weatherLogo--style clouds" alt="test" />
-                  </div>
+                  <>
+                    <div className='image-container'>
+                      <img src={SunnyIcon} className="weatherLogo--style clouds" alt="test" />
+                    </div>
+                    <p className='temp--style sunny-details-color'>{weather.temp}&#176;</p>
+                    <>
+                      <div className="details--container">
+                        <>
+                          <img src={SunnyUmbrella} className="minorLogo--style" alt="test" />
+                          <p className='thermometer sunny-details-color'>84%</p>            
+                        </>
+                      </div>
+                      <div className="details--container">
+                          <>
+                            <img src={SunnyThermometer} className="minorLogo--style" alt="test" />
+                            <p className='thermometer sunny-details-color'>28&#176;</p>                      
+                          </>
+                      </div>
+                    </>
+                  </>
                 }
 
                 {weather.weatherType === "rainy" &&
@@ -54,32 +85,6 @@ function App() {
                     <img src={SnowIcon} className="weatherLogo--style clouds" alt="test" />
                   </div>
                 }
-                
-                <>
-                  <div className="details--container">
-                    {weather.weatherType === "cloudy" &&
-                      <>
-                        <img src={CloudyUmbrella} className="minorLogo--style" alt="test" />
-                        <p className='thermometer cloudy-details-color'>84%</p>            
-                      </>
-                    }
-                    {weather.weatherType === "sunny" &&
-                      <img src={SunnyUmbrella} className="minorLogo--style thermometer" alt="test" />
-                    }
-                    
-                  </div>
-                  <div className="details--container">
-                    {weather.weatherType === "cloudy" &&
-                      <>
-                        <img src={CloudyThermometer} className="minorLogo--style" alt="test" />
-                        <p className='thermometer cloudy-details-color'>28&#176;</p>                      
-                      </>
-                    }
-                    {weather.weatherType === "sunny" &&
-                      <img src={SunnyThermometer} className="minorLogo--style " alt="test" />
-                    }
-                  </div>
-                </>
               </div>
             </section>
           ))
