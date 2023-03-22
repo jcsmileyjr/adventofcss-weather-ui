@@ -7,9 +7,8 @@ import './App.css';
  * TODO LIST
  * Set up general structure of one section
  * Add images and text
- * Create a data object to generate the UI sections
+ * Create a data object to generate the UI sections' content
  * Format styling for desktop (matches the design)
- * Add in other sections
  * Add functionality to display icons based on data types
  */
 
@@ -18,24 +17,28 @@ function App() {
   return (
     <div className="App">
       <main>
-        <section>
-          <p>{weatherData[0].day}</p>
-          <p>8</p>
-          <div>
-            <img src={testLogo} className="weatherLogo--style" alt="test" />
-            <p>71&#176;</p>
-            <>
+        {
+          weatherData.map( (weather, index) => (
+            <section>
+              <p>{weather.day}</p>
+              <p>{weather.date}</p>
               <div>
-                <img src={testLogo} className="minorLogo--style" alt="test" />
-                <p>84%</p>
+                <img src={testLogo} className="weatherLogo--style" alt="test" />
+                <p>{weather.temp}&#176;</p>
+                <>
+                  <div>
+                    <img src={testLogo} className="minorLogo--style" alt="test" />
+                    <p>84%</p>
+                  </div>
+                  <div>
+                    <img src={testLogo} className="minorLogo--style" alt="test" />
+                    <p>28&#176;</p>
+                  </div>
+                </>
               </div>
-              <div>
-                <img src={testLogo} className="minorLogo--style" alt="test" />
-                <p>28&#176;</p>
-              </div>
-            </>
-          </div>
-        </section>
+            </section>
+          ))
+        }
       </main>
     </div>
   );
