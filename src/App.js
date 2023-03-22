@@ -1,6 +1,15 @@
 import testLogo from './logo.svg';
 import './App.css';
 
+const data = [
+  {
+    "day":"WED",
+    "date":8,
+    "weatherType":"cloudy",
+    "temp":71
+  }
+]
+
 /**
  * TODO LIST
  * Set up general structure of one section
