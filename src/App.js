@@ -1,15 +1,16 @@
-import testLogo from './logo.svg';
-import weatherData from './data/data'
-import CloudyIcon from "./assets/white-cloud.png"
-import SunnyIcon from './assets/yellow-sun.png'
-import RainIcon from './assets/cloud-rain-icon-1.png'
-import SnowIcon from './assets/snowflake-color-icon.png'
-import CloudyUmbrella from './assets/cloudy-umbrella.png'
-import SunnyUmbrella from './assets/sunny-umbrella.png'
-import CloudyThermometer from './assets/cloudy-thermometer.png'
-import SunnyThermometer from './assets/sunny-thermometer.png'
-import './App.css';
-
+import testLogo from "./logo.svg";
+import weatherData from "./data/data";
+import CloudyIcon from "./assets/white-cloud.png";
+import SunnyIcon from "./assets/yellow-sun.png";
+import RainIcon from "./assets/cloud-rain-icon-1.png";
+import SnowIcon from "./assets/snowflake-color-icon.png";
+import CloudyUmbrella from "./assets/cloudy-umbrella.png";
+import SunnyUmbrella from "./assets/sunny-umbrella.png";
+import RainUmbrella from './assets/rain-umbrella.png'
+import CloudyThermometer from "./assets/cloudy-thermometer.png";
+import SunnyThermometer from "./assets/sunny-thermometer.png";
+import RainThermometer from './assets/rain-thermometer.png'
+import "./App.css";
 
 /**
  * TODO LIST
@@ -20,75 +21,97 @@ import './App.css';
  * Add functionality to display icons based on data types
  */
 
+const WeatherReport = ({
+  weather,
+  weathericon,
+  umbrella,
+  thermometer,
+  weatherDetailStyle,
+}) => {
+  return (
+    <>
+      <div className="image-container">
+        <img
+          src={weathericon}
+          className="weatherLogo--style clouds"
+          alt="test"
+        />
+      </div>
+      <p className={`temp--style ${weatherDetailStyle}`}>
+        {weather.temp}&#176;
+      </p>
+      <>
+        <div className="details--container">
+          <>
+            <img src={umbrella} className="minorLogo--style" alt="test" />
+            <p className={`thermometer ${weatherDetailStyle}`}>84%</p>
+          </>
+        </div>
+        <div className="details--container">
+          <>
+            <img src={thermometer} className="minorLogo--style" alt="test" />
+            <p className={`thermometer ${weatherDetailStyle}`}>28&#176;</p>
+          </>
+        </div>
+      </>
+    </>
+  );
+};
+
 function App() {
   return (
     <div className="App">
       <main>
-        {
-          weatherData.map( (weather, index) => (
-            <section>
-              <p className='day--style'>{weather.day}</p>
-              <p className='date--style'>{weather.date}</p>
-              <div className={`content--container ${weather.weatherType === "cloudy"?'cloud-bg-colors':""} ${weather.weatherType === "sunny"?'sunny-bg-colors':""} ${weather.weatherType === "rainy"?'rainy-bg-colors':""} ${weather.weatherType === "snowy"?'snow-bg-colors':""}`}>
-                {weather.weatherType === "cloudy" &&
-                  <>
-                    <div className='image-container'>
-                      <img src={CloudyIcon} className="weatherLogo--style clouds" alt="test" />
-                    </div>
-                    <p className='temp--style cloudy-details-color'>{weather.temp}&#176;</p>
-                    <>
-                      <div className="details--container">
-                        <>
-                          <img src={CloudyUmbrella} className="minorLogo--style" alt="test" />
-                          <p className='thermometer cloudy-details-color'>84%</p>            
-                        </>
-                      </div>
-                      <div className="details--container">
-                          <>
-                            <img src={CloudyThermometer} className="minorLogo--style" alt="test" />
-                            <p className='thermometer cloudy-details-color'>28&#176;</p>                      
-                          </>
-                      </div>
-                    </>
-                  </>
-                }
-                {weather.weatherType === "sunny" &&
-                  <>
-                    <div className='image-container'>
-                      <img src={SunnyIcon} className="weatherLogo--style clouds" alt="test" />
-                    </div>
-                    <p className='temp--style sunny-details-color'>{weather.temp}&#176;</p>
-                    <>
-                      <div className="details--container">
-                        <>
-                          <img src={SunnyUmbrella} className="minorLogo--style" alt="test" />
-                          <p className='thermometer sunny-details-color'>84%</p>            
-                        </>
-                      </div>
-                      <div className="details--container">
-                          <>
-                            <img src={SunnyThermometer} className="minorLogo--style" alt="test" />
-                            <p className='thermometer sunny-details-color'>28&#176;</p>                      
-                          </>
-                      </div>
-                    </>
-                  </>
-                }
-
-                {weather.weatherType === "rainy" &&
-                  <div className='image-container'>
-                    <img src={RainIcon} className="weatherLogo--style clouds" alt="test" />
-                  </div>
-                }
-                {weather.weatherType === "snowy" &&
-                  <div className='image-container'>
-                    <img src={SnowIcon} className="weatherLogo--style clouds" alt="test" />
-                  </div>
-                }
-              </div>
-            </section>
-          ))
-        }
+        {weatherData.map((weather, index) => (
+          <section>
+            <p className="day--style">{weather.day}</p>
+            <p className="date--style">{weather.date}</p>
+            <div
+              className={`content--container ${
+                weather.weatherType === "cloudy" ? "cloud-bg-colors" : ""
+              } ${weather.weatherType === "sunny" ? "sunny-bg-colors" : ""} ${
+                weather.weatherType === "rainy" ? "rainy-bg-colors" : ""
+              } ${weather.weatherType === "snowy" ? "snow-bg-colors" : ""}`}
+            >
+              {weather.weatherType === "cloudy" && (
+                <WeatherReport
+                  weather={weather}
+                  weathericon={CloudyIcon}
+                  umbrella={CloudyUmbrella}
+                  thermometer={CloudyThermometer}
+                  weatherDetailStyle="cloudy-details-color"
+                />
+              )}
+              {weather.weatherType === "sunny" && (
+                <WeatherReport
+                  weather={weather}
+                  weathericon={SunnyIcon}
+                  umbrella={SunnyUmbrella}
+                  thermometer={SunnyThermometer}
+                  weatherDetailStyle="sunny-details-color"
+                />
+              )}
+              {weather.weatherType === "rainy" && (
+                <WeatherReport
+                  weather={weather}
+                  weathericon={RainIcon}
+                  umbrella={RainUmbrella}
+                  thermometer={RainThermometer}
+                  weatherDetailStyle="rain-details-color"
+                />
+              )}
+              {weather.weatherType === "snowy" && (
+                <WeatherReport
+                  weather={weather}
+                  weathericon={SnowIcon}
+                  umbrella={CloudyUmbrella}
+                  thermometer={CloudyThermometer}
+                  weatherDetailStyle="cloudy-details-color"
+                />
+              )}
+            </div>
+          </section>
+        ))}
       </main>
     </div>
   );

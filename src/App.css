@@ -7,6 +7,16 @@
   padding: 10px 0;
 }
 
+.lightBlue {
+  background-color: #00c0ff;
+}
+
+.yellow {
+  background-color: #ffea80;
+}
+
+
+
 .cloud-bg-colors {
   background-color: #00c0ff;
 }
@@ -23,12 +33,20 @@
   background-color: #dbe7f1;
 }
 
+.cloudy-temp-color {
+
+}
+
 .cloudy-details-color {
   color: white;
 }
 
 .sunny-details-color {
   color: #00c0ff;
+}
+
+.rain-details-color {
+  color: #ffea80;
 }
 
 .thermometer {
