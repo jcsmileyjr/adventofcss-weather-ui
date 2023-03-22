@@ -20,17 +20,17 @@ function App() {
         {
           weatherData.map( (weather, index) => (
             <section>
-              <p>{weather.day}</p>
-              <p>{weather.date}</p>
+              <p className='day--style'>{weather.day}</p>
+              <p className='date--style'>{weather.date}</p>
               <div>
                 <img src={testLogo} className="weatherLogo--style" alt="test" />
-                <p>{weather.temp}&#176;</p>
+                <p className='temp--style'>{weather.temp}&#176;</p>
                 <>
-                  <div>
+                  <div className="details--container">
                     <img src={testLogo} className="minorLogo--style" alt="test" />
                     <p>84%</p>
                   </div>
-                  <div>
+                  <div className="details--container">
                     <img src={testLogo} className="minorLogo--style" alt="test" />
                     <p>28&#176;</p>
                   </div>
