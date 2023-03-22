@@ -13,7 +13,6 @@ import './App.css';
  */
 
 function App() {
-  console.log(weatherData)
   return (
     <div className="App">
       <main>
@@ -22,7 +21,7 @@ function App() {
             <section>
               <p className='day--style'>{weather.day}</p>
               <p className='date--style'>{weather.date}</p>
-              <div>
+              <div className='content--container'>
                 <img src={testLogo} className="weatherLogo--style" alt="test" />
                 <p className='temp--style'>{weather.temp}&#176;</p>
                 <>

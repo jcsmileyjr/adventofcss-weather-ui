@@ -2,8 +2,14 @@
 
 }
 
+.content--container {
+  background-color: #00c0ff;
+  border-radius: 30px;
+  padding-bottom: 10px;
+}
+
 .weatherLogo--style {
-  height: 75px;
+  width: 100px;
 }
 
 .minorLogo--style {
@@ -51,8 +57,10 @@
     align-items: center;
     height: 100vh;
   }
-
+  
   main {
     display: flex;
+    gap: 5px;
+    margin:0 10px;
   }
 }
