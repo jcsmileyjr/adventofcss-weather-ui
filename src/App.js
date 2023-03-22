@@ -3,6 +3,7 @@ import weatherData from './data/data'
 import CloudyIcon from "./assets/white-cloud.png"
 import SunnyIcon from './assets/yellow-sun.png'
 import RainIcon from './assets/cloud-rain-icon-1.png'
+import SnowIcon from './assets/snowflake-color-icon.png'
 import './App.css';
 
 
@@ -24,7 +25,7 @@ function App() {
             <section>
               <p className='day--style'>{weather.day}</p>
               <p className='date--style'>{weather.date}</p>
-              <div className={`content--container ${weather.weatherType === "cloudy"?'cloud-bg-colors':""} ${weather.weatherType === "sunny"?'sunny-bg-colors':""} ${weather.weatherType === "rainy"?'rainy-bg-colors':""}`}>
+              <div className={`content--container ${weather.weatherType === "cloudy"?'cloud-bg-colors':""} ${weather.weatherType === "sunny"?'sunny-bg-colors':""} ${weather.weatherType === "rainy"?'rainy-bg-colors':""} ${weather.weatherType === "snowy"?'snow-bg-colors':""}`}>
                 {weather.weatherType === "cloudy" &&
                   <div className='image-container'>
                     <img src={CloudyIcon} className="weatherLogo--style clouds" alt="test" />
@@ -41,7 +42,11 @@ function App() {
                     <img src={RainIcon} className="weatherLogo--style clouds" alt="test" />
                   </div>
                 }
-                <img src={testLogo} className="weatherLogo--style" alt="test" />
+                {weather.weatherType === "snowy" &&
+                  <div className='image-container'>
+                    <img src={SnowIcon} className="weatherLogo--style clouds" alt="test" />
+                  </div>
+                }
                 <p className='temp--style'>{weather.temp}&#176;</p>
                 <>
                   <div className="details--container">

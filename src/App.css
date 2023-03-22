@@ -19,6 +19,10 @@
   background-color: #06657a;
 }
 
+.snow-bg-colors {
+  background-color: #dbe7f1;
+}
+
 .image-container {
   
 }
@@ -82,7 +86,7 @@
   
   main {
     display: flex;
-    gap: 5px;
+    gap: 10px;
     margin:0 10px;
   }
 }
