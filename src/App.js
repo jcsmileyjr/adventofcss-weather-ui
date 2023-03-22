@@ -1,5 +1,13 @@
-// import logo from './logo.svg';
+import testLogo from './logo.svg';
 import './App.css';
+
+/**
+ * TODO LIST
+ * Set up general structure of one section
+ * Add images and text
+ * Format styling for desktop (matches the design)
+ * Add in other sections
+ */
 
 function App() {
   return (
@@ -9,13 +17,16 @@ function App() {
           <p>WED</p>
           <p>8</p>
           <div>
-            <p></p>
+            <img src={testLogo} className="weatherLogo--style" alt="test" />
+            <p>71&#176;</p>
             <>
               <div>
-                <p></p>
+                <img src={testLogo} className="minorLogo--style" alt="test" />
+                <p>84%</p>
               </div>
               <div>
-                <p></p>
+                <img src={testLogo} className="minorLogo--style" alt="test" />
+                <p>28&#176;</p>
               </div>
             </>
           </div>
