@@ -7,12 +7,28 @@
   padding: 10px 0;
 }
 
-.lightBlue {
-  background-color: #00c0ff;
+.darkBlue {
+  color: #00c0ff;
 }
 
 .yellow {
-  background-color: #ffea80;
+  color: #ffea80;
+}
+
+.green {
+  color: #06657a;
+}
+
+.lightBlue {
+  color: #dbe7f1;
+}
+
+.white {
+  color: white;
+}
+
+.black {
+  color: black;
 }
 
 

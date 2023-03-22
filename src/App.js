@@ -27,6 +27,7 @@ const WeatherReport = ({
   umbrella,
   thermometer,
   weatherDetailStyle,
+  tempStyle
 }) => {
   return (
     <>
@@ -37,7 +38,7 @@ const WeatherReport = ({
           alt="test"
         />
       </div>
-      <p className={`temp--style ${weatherDetailStyle}`}>
+      <p className={`temp--style ${tempStyle}`}>
         {weather.temp}&#176;
       </p>
       <>
@@ -79,7 +80,8 @@ function App() {
                   weathericon={CloudyIcon}
                   umbrella={CloudyUmbrella}
                   thermometer={CloudyThermometer}
-                  weatherDetailStyle="cloudy-details-color"
+                  weatherDetailStyle="white"
+                  tempStyle="yellow"
                 />
               )}
               {weather.weatherType === "sunny" && (
@@ -88,7 +90,8 @@ function App() {
                   weathericon={SunnyIcon}
                   umbrella={SunnyUmbrella}
                   thermometer={SunnyThermometer}
-                  weatherDetailStyle="sunny-details-color"
+                  weatherDetailStyle="green"
+                  tempStyle="darkBlue"
                 />
               )}
               {weather.weatherType === "rainy" && (
@@ -97,7 +100,8 @@ function App() {
                   weathericon={RainIcon}
                   umbrella={RainUmbrella}
                   thermometer={RainThermometer}
-                  weatherDetailStyle="rain-details-color"
+                  weatherDetailStyle="white"
+                  tempStyle="yellow"
                 />
               )}
               {weather.weatherType === "snowy" && (
@@ -106,7 +110,8 @@ function App() {
                   weathericon={SnowIcon}
                   umbrella={CloudyUmbrella}
                   thermometer={CloudyThermometer}
-                  weatherDetailStyle="cloudy-details-color"
+                  weatherDetailStyle="green"
+                  tempStyle="black"
                 />
               )}
             </div>
