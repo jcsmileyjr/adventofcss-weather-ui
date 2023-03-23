@@ -1,4 +1,3 @@
-import testLogo from "./logo.svg";
 import weatherData from "./data/data";
 import CloudyIcon from "./assets/white-cloud.png";
 import SunnyIcon from "./assets/yellow-sun.png";
@@ -15,14 +14,19 @@ import SnowThermometer from './assets/snow-thermometer.png'
 import "./App.css";
 
 /**
- * TODO LIST
- * Set up general structure of one section
- * Add images and text
- * Create a data object to generate the UI sections' content
- * Format styling for desktop (matches the design)
- * Add functionality to display icons based on data types
+ * Component to display a day's weather
+ * @param {object} - weather:       Weather object from an array from the data/data.json 
+ * @param {string} - weather.day:   Property featuring the day of the week in three charaters
+ * @param {number} - weather.date:  Property featuring the date of the week
+ * @param {string} - weather.weatherType: Property featuring the type of weather expected (sunny, rainy, cloudy, snowy)
+ * @param {number} - weather.temp:  Property featuring the expected temperture 
+ * @param {image} -  weathericon:   Image reference to the weather expected (clouds, sun, rain, snow)
+ * @param {image} -  umbrella:      Image reference that have the correct color to the background based on weather expected
+ * @param {image} -  thrmometer:    Image reference that have teh correct color to the background based on weather expected
+ * @param {string} -  weatherDetailStyle: Style class that corrolates to which color should the details section should have
+ * @param {string} -  tempStyle:    Style class that corrolates toTells which color the temperture should have
+ * @returns 
  */
-
 const WeatherReport = ({
   weather,
   weathericon,
@@ -33,6 +37,7 @@ const WeatherReport = ({
 }) => {
   return (
     <>
+      {/*Displays type of weather via images */}
       <div className="image-container">
         <img
           src={weathericon}
@@ -40,9 +45,13 @@ const WeatherReport = ({
           alt="test"
         />
       </div>
+
+      {/*Displays the current temperture */}
       <p className={`temp--style ${tempStyle}`}>
         {weather.temp}&#176;
       </p>
+
+      {/*Displays the humility and baramoter details */}
       <div>
         <div className="details--container">
           <>
@@ -65,10 +74,14 @@ function App() {
   return (
     <div className="App">
       <main>
+        {/*Sort through each object within the data/data.json array to display 7 days of weather*/}
         {weatherData.map((weather, index) => (
-          <section>
+          <section key={index}>
+            {/*Header */}
             <p className="day--style">{weather.day}</p>
             <p className="date--style">{weather.date}</p>
+
+            {/*Based on weather type, a different background color scheme is used */}
             <div
               className={`content--container ${
                 weather.weatherType === "cloudy" ? "cloud-bg-colors" : ""
@@ -76,6 +89,8 @@ function App() {
                 weather.weatherType === "rainy" ? "rainy-bg-colors" : ""
               } ${weather.weatherType === "snowy" ? "snow-bg-colors" : ""}`}
             >
+              
+              {/*Content with images & color based on weather type */}
               {weather.weatherType === "cloudy" && (
                 <WeatherReport
                   weather={weather}
