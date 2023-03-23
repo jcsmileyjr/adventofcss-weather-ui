@@ -43,7 +43,7 @@ const WeatherReport = ({
       <p className={`temp--style ${tempStyle}`}>
         {weather.temp}&#176;
       </p>
-      <>
+      <div>
         <div className="details--container">
           <>
             <img src={umbrella} className="minorLogo--style" alt="test" />
@@ -56,7 +56,7 @@ const WeatherReport = ({
             <p className={`thermometer ${weatherDetailStyle}`}>28&#176;</p>
           </>
         </div>
-      </>
+      </div>
     </>
   );
 };
