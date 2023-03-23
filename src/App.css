@@ -19,8 +19,11 @@
   color: #06657a;
 }
 
+/*190-226-255
+#dbe7f1
+*/
 .lightBlue {
-  color: #dbe7f1;
+  color: #bee2ff;
 }
 
 .white {
@@ -46,7 +49,7 @@
 }
 
 .snow-bg-colors {
-  background-color: #dbe7f1;
+  background-color: #bee2ff;
 }
 
 .cloudy-temp-color {

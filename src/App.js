@@ -7,9 +7,11 @@ import SnowIcon from "./assets/snowflake-color-icon.png";
 import CloudyUmbrella from "./assets/cloudy-umbrella.png";
 import SunnyUmbrella from "./assets/sunny-umbrella.png";
 import RainUmbrella from './assets/rain-umbrella.png'
+import SnowUmbrella from './assets/snow-umbrella.png'
 import CloudyThermometer from "./assets/cloudy-thermometer.png";
 import SunnyThermometer from "./assets/sunny-thermometer.png";
 import RainThermometer from './assets/rain-thermometer.png'
+import SnowThermometer from './assets/snow-thermometer.png'
 import "./App.css";
 
 /**
@@ -108,8 +110,8 @@ function App() {
                 <WeatherReport
                   weather={weather}
                   weathericon={SnowIcon}
-                  umbrella={CloudyUmbrella}
-                  thermometer={CloudyThermometer}
+                  umbrella={SnowUmbrella}
+                  thermometer={SnowThermometer}
                   weatherDetailStyle="green"
                   tempStyle="black"
                 />
