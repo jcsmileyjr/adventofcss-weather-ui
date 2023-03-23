@@ -1,15 +1,3 @@
-.App {
-
-}
-
-.content--container {
-  border-radius: 30px;
-  padding: 10px 0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
 .darkBlue {
   color: #00c0ff;
@@ -38,8 +26,6 @@
   color: black;
 }
 
-
-
 .cloud-bg-colors {
   background-color: #00c0ff;
 }
@@ -54,10 +40,6 @@
 
 .snow-bg-colors {
   background-color: #bee2ff;
-}
-
-.cloudy-temp-color {
-
 }
 
 .cloudy-details-color {
@@ -127,17 +109,57 @@
   color: #00c0ff;
 }
 
+.App {
+  display: block;
+  height: 100vh;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.content--container {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 70%;
+}
+
 @media only screen and (min-width: 600px){
+  .content--container {
+    height: 100%;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius:0%;
+    border-radius: 30px;
+    padding: 10px 0;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  section {
+    margin: 0;
+  }
+  
   .App {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
   }
   
   main {
     display: flex;
     gap: 10px;
     margin:0 10px;
+  }
+
+  section {
+    display: block;
   }
 }
